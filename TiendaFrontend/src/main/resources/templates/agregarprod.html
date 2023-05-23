@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar producto</title>
+</head>
+<body>
+<h1>Agregar producto</h1>
+<form method="POST" action="/Tienda/productos/creando">
+    <label for="id">Id:</label>
+    <input type="text" id="id" name="id" required>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="precio">Precio:</label>
+    <input type="text" id="precio" name="precio" required>
+
+    <label for="distribuidor">Distribuidor:</label>
+    <input type="text" id="distribuidor" name="distribuidor" required>
+
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" name="descripcion" required>
+
+    <button type="submit">Agregar Producto</button>
+</form>
+</body>
+</html>
+
