@@ -1,43 +1,110 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Lista de productos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Tienda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/offcanvas-navbar/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
 </head>
-<body>
-<h1>Lista de productos</h1>
-<table>
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Nombre</th>
-        <th>Precio</th>
-        <th>Distribuidor</th>
-        <th>Descripcion</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="producto : ${productos}">
-        <td th:text="${producto.id}"></td>
-        <td th:text="${producto.nombre}"></td>
-        <td th:text="${producto.precio}"></td>
-        <td th:text="${producto.distribuidor}"></td>
-        <td th:text="${producto.descripcion}"></td>
-    </tr>
-    </tbody>
-</table>
+<body class="bg-light">
 
-<form method="GET" action="/Tienda/producto/crear">
-    <button type="submit">Agregar producto</button>
-</form>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Tienda "La Nueva"</a>
+        <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
 
-<form method="GET" action="/Tienda/producto/borrar">
-    <button type="submit">Borrar producto</button>
-</form>
 
-<form method="GET" action="/Tienda/producto/actualizar">
-    <button type="submit">Modificar producto</button>
-</form>
+<main class="container">
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <h5 class="border-bottom pb-2 mb-0">Tabla de productos</h5>
+            <div class="d-flex text-muted pt-3">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Distribuidor</th>
+                    <th scope="col">Descripcion</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="producto : ${productos}">
+                    <td th:text="${producto.id}"></td>
+                    <td th:text="${producto.nombre}"></td>
+                    <td th:text="${producto.precio}"></td>
+                    <td th:text="${producto.distribuidor}"></td>
+                    <td th:text="${producto.descripcion}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h5 class="border-bottom pb-2 mb-0">Modificar la tabla</h5>
+        <div class="d-flex text-muted pt-3">
+
+            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="d-flex justify-content-between">
+                    </table>
+
+                    <form method="GET" action="/Tienda/producto/crear">
+                        <button type="submit" class="btn btn-success btn-lg">Agregar producto</button>
+                    </form>
+
+                    <form method="GET" action="/Tienda/producto/borrar">
+                        <button type="submit" class="btn btn-danger btn-lg">Borrar producto</button>
+                    </form>
+
+                    <form method="GET" action="/Tienda/producto/actualizar">
+                        <button type="submit" class="btn btn-primary btn-lg">Modificar producto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="offcanvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </body>
 </html>
